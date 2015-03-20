@@ -1,0 +1,64 @@
+{
+  "root": "",
+  "client": {
+    "root": "src/client",
+    "app": "src/client/app",
+    "index": "src/client/index.html",
+    "html": "src/client/app/core/views/**/*",
+    "js": "src/client/app/core/Backbone/**/*.js",
+    "main": "src/client/app/core/index.js",
+    "css": "src/client/app/core/styles/*.css",
+    "assets": "./src/client/app/core/assets/*"
+  },
+  "vendor": {
+    "root": "build/vendor",
+    "all": "build/vendor/**/*",
+    "js": "build/vendor/js/**/*",
+    "css": "build/vendor/css/**/*",
+    "fonts": "build/vendor/fonts/**/*",
+    "dir": {
+      "js": "build/vendor/js",
+      "css": "build/vendor/css",
+      "fonts": "build/vendor/fonts"
+    }
+  },
+  "build": {
+    "root": "build",
+    "all": "build/**/*",
+    "index": "build/index.html",
+    "js": "build/js/core/**/*.js",
+    "main": "build/js/*.js",
+    "css": "build/css/*",
+    "vendor": "build/vendor/**/*",
+    "templates": "build/templates/**/*",
+    "dir": {
+      "corejs": "build/js/core",
+      "js": "build/js",
+      "css": "build/css",
+      "vendor": "build/vendor",
+      "templates": "build/templates",
+      "assets": "build/assets"
+    }
+  },
+  "stage": {
+    "root": "build",
+    "dir": {
+      "js": "build/js",
+      "css": "build/css",
+      "vendor": "build/vendor",
+      "templates": "build/templates",
+      "assets": "build/assets"
+    }
+  },
+  "server": {
+    "root": "src/server/server.js"
+  },
+  "tests": {
+    "integration": "test/integration/integration.js",
+    "server": "test/unit/server.js",
+    "client": "test/unit/client.js",
+    "jsx": "test/unit/jsxComponents/*.js",
+    "karma" : "karma.conf.js", 
+    "testFiles": "['src/client/app/core/*.js', 'test/unit/client.js']"
+  }  
+}
