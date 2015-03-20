@@ -1,7 +1,43 @@
 body {
-	background-color: grey;
+	background-color: lightgrey;
 }
 
 .highlighted{
 	background-color:yellow;
+}
+
+h1 {
+	font-size: 300%;
+}
+
+.lobby, .increment{
+	position: relative;
+	font-size: 200%;
+	text-align: center;
+	width: 20%;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 0; 	
+}
+
+table {
+    padding: 10px;
+    border: 5px solid black;
+    margin: 0; 
+}
+
+th{
+	font-size: 200%;
+	text-align: center;
+    padding: 15px;
+    border: 2px solid black;
+    margin: 0; 	
+}
+
+td {
+	font-size: 150%;
+	text-align: center;
+    padding: 15px;
+    border: 2px solid black;
+    margin: 0; 
 }

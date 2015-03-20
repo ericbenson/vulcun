@@ -1,10 +1,15 @@
 $(function(){
 
-	var contests = new Contests();
+  var contests = new Contests();
   var currentView;
-  var setCurrentView = function(view){
-    currentView = view;
+
+  var stillHighlighted;
+  var highlight = function(){
+    if(stillHighlighted){
+      stillHighlighted.highlight();
+    }
   };
+
 
   // set up model objects
     contests.fetch({reset:true, success: function(){
@@ -18,22 +23,24 @@ $(function(){
       var appView = new AppView({model: app});
 
       app_router.on('route:getPost', function (id) {
-          setCurrentView(function(){
+          currentView = function(){
             // Note the variable in the route definition being passed in here
             var contestView = new SingleContestView({model: app, id: id});
             $('.app').children().detach();          
-            $('.app').append(contestView.render());            
-          });
+            $('.app').append(contestView.render());
+            highlight();            
+          };
           currentView();
 
       });
       app_router.on('route:defaultRoute', function (actions) {
-        setCurrentView(function(){
+        currentView =function(){
 
           // put the view onto the screen
           $('.app').children().detach();
           $('.app').append(appView.render());
-        });
+          highlight();
+        };
         currentView();
       });
       // Start Backbone history a necessary step for bookmarkable URL's
@@ -42,13 +49,19 @@ $(function(){
     }
   });
 
+
   //set up socket
   var socket = io();
   socket.on('increment', function(model){
     var updated = contests.get(model.id); 
     updated.set('currentEntries',model.currentEntries);    
     currentView();
-    updated.highlight();
+
+    stillHighlighted = updated;
+    highlight();
+    setTimeout(function(){
+      stillHighlighted = undefined;
+    },3000)
   })
 
 });

@@ -33,13 +33,11 @@
     .task( 'js:dev'      , tasks.js.dev)
     .task( 'main:dev'    , tasks.main.dev)
     .task( 'css:dev'     , tasks.css.dev)
-    .task( 'html:dev'    , tasks.html.dev)
     .task( 'assets:dev'  , tasks.assets.dev)
     .task( 'build:dev'   ,
       $.sequence( 'js:dev'
                 , 'main:dev'
                 , 'css:dev'
-                , 'html:dev'
                 , 'assets:dev'
                 ));
 

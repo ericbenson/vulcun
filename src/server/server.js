@@ -20,7 +20,6 @@ app.use(parser.json());
 app.use(reloader());
 app.use(express.static('./build'));
 
-
 // Set up our routes
 app.use("/contests", router);
 

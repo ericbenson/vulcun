@@ -7,7 +7,7 @@ var ContestEntryView = Backbone.View.extend({
                         <td>$<%= prizePool %></td> \
                         <td><%= currentEntries %> / <%= totalEntries %></td>   \
                         <td>$<%= entryFee %></td>  \
-                        <td><%= startDate %></td>  \
+                        <td><%= timeUntil %></td>  \
                         <td class="enter"> Enter </td>'),
 
   events: {
@@ -21,7 +21,6 @@ var ContestEntryView = Backbone.View.extend({
 
   initialize: function(params) {
     this.model.on('highlight', function(model){
-      console.log('getting highlighted');
       var element = this.$el;
       element.addClass('highlighted');
       setTimeout(function(){

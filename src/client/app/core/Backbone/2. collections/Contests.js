@@ -15,7 +15,6 @@ var Contests = Backbone.Collection.extend({
     }
     this.sortAttribute = attr;
 	  this.sort();
-    console.log(attr);
 	},
 
 	comparator: function(a, b) {

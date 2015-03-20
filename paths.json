@@ -4,7 +4,6 @@
     "root": "src/client",
     "app": "src/client/app",
     "index": "src/client/index.html",
-    "html": "src/client/app/core/views/**/*",
     "js": "src/client/app/core/Backbone/**/*.js",
     "main": "src/client/app/core/index.js",
     "css": "src/client/app/core/styles/*.css",
